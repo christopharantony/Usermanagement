@@ -48,3 +48,7 @@ module.exports.checkAdmin = (req, res, next) => {
         next();
     }
 }
+
+//Ok here I am trying to make a middleware to check if the user is logged in or not.
+// This is the code I am trying to write:
+// Start from server\Middlewares\AuthMiddleware.js:

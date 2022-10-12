@@ -1,16 +1,13 @@
 const express = require("express")
 const app = express()
 
-const authRoutes = require("./Routes/AuthRoutes")
-
 const cookieParser = require("cookie-parser")
 const mongoose = require("mongoose")
 const cors = require("cors")
-const adminrouter = require("./Routes/AdminRoutes")
 require("dotenv").config();
 
 
-app.listen(4000, () => {
+app.listen(4001, () => {
     console.log("http://localhost:4000")
 });
 
@@ -31,5 +28,5 @@ app.use(cors({
 
 app.use(cookieParser())
 app.use(express.json());
-app.use("/admin",adminrouter)
-app.use("/",authRoutes)
+app.use("/admin",require("./Routes/AdminRoutes"))
+app.use("/",require("./Routes/AuthRoutes"))
